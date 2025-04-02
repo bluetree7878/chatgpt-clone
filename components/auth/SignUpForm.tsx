@@ -1,5 +1,6 @@
 "use client";
 
+import { useActionState } from "react";
 import { Input } from "@/components/ui/input";
 import FormCard from "./FormCard";
 import FormMessage from "./FormMessage";
@@ -7,15 +8,15 @@ import Submit from "./Submit";
 import { useFormValidate } from "@/hooks/useFormValidate";
 import { SignUpSchema } from "@/schemas/auth";
 import { SignUpFormError } from "@/types/form.d";
+import { signUp } from "@/actions/signup";
 
 export default function SignUpForm() {
+  const [error, action, isPending] = useActionState(signUp, undefined);
   const { errors, validateField } =
     useFormValidate<SignUpFormError>(SignUpSchema);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     validateField(name, value);
-
-    console.log(errors);
   };
 
   return (
@@ -23,7 +24,7 @@ export default function SignUpForm() {
       title="회원가입"
       footer={{ label: "이미 계정이 있으십니까?", href: "/login" }}
     >
-      <form className="space-y-6">
+      <form action={action} className="space-y-6">
         {/* 이름 */}
         <div className="flex flex-col gap-1">
           <label htmlFor="name">이름</label>
