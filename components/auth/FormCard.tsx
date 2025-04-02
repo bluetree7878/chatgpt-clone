@@ -4,8 +4,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import Link from "next/link";
+} from '@/components/ui/card';
+import Link from 'next/link';
 
 interface FormCardProps {
   title: string;
@@ -17,7 +17,9 @@ export default function FormCard({ title, footer, children }: FormCardProps) {
   return (
     <Card className="w-[500px] flex flex-col items-center border">
       <CardHeader className="text-center w-full">
-        <CardTitle className="text-2xl tracking-tight">{title}</CardTitle>
+        <CardTitle className="text-2xl tracking-tight font-bold">
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="w-[90%]">{children}</CardContent>
       <CardFooter>

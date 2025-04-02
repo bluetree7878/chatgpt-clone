@@ -1,14 +1,15 @@
-"use client";
+'use client';
 
-import { useActionState } from "react";
-import { Input } from "@/components/ui/input";
-import FormCard from "./FormCard";
-import FormMessage from "./FormMessage";
-import Submit from "./Submit";
-import { useFormValidate } from "@/hooks/useFormValidate";
-import { SignUpSchema } from "@/schemas/auth";
-import { SignUpFormError } from "@/types/form.d";
-import { signUp } from "@/actions/signup";
+import { useActionState, useEffect } from 'react';
+import { Input } from '@/components/ui/input';
+import FormCard from './FormCard';
+import FormMessage from './FormMessage';
+import Submit from './Submit';
+import { useFormValidate } from '@/hooks/useFormValidate';
+import { SignUpSchema } from '@/schemas/auth';
+import { SignUpFormError } from '@/types/form.d';
+import { signUp } from '@/actions/signup';
+import toast from 'react-hot-toast';
 
 export default function SignUpForm() {
   const [error, action, isPending] = useActionState(signUp, undefined);
@@ -19,10 +20,16 @@ export default function SignUpForm() {
     validateField(name, value);
   };
 
+  useEffect(() => {
+    if (error) {
+      toast.error(error.errorMessage);
+    }
+  }, [error]);
+
   return (
     <FormCard
       title="회원가입"
-      footer={{ label: "이미 계정이 있으십니까?", href: "/login" }}
+      footer={{ label: '이미 계정이 있으십니까?', href: '/login' }}
     >
       <form action={action} className="space-y-6">
         {/* 이름 */}
@@ -63,7 +70,7 @@ export default function SignUpForm() {
           />
           {errors?.password && <FormMessage message={errors?.password[0]} />}
         </div>
-        <Submit className="w-full">가입하기</Submit>
+        <Submit className="w-full font-extrabold">가입하기</Submit>
       </form>
     </FormCard>
   );
