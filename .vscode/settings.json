@@ -8,5 +8,6 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
     "neondatabase"
-  ]
+  ],
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs"
 }
