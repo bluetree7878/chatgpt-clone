@@ -1,23 +1,23 @@
-"use server";
+'use server';
 
-import { getUserByEmail } from "@/data/user";
-import { LoginSchema } from "@/schemas/auth";
-import bcrypt from "bcryptjs";
-import { createSession } from "./sessions";
-import { redirect } from "next/navigation";
+import { getUserByEmail } from '@/data/user';
+import { LoginSchema } from '@/schemas/auth';
+import bcrypt from 'bcryptjs';
+import { createSession } from './sessions';
+import { redirect } from 'next/navigation';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const login = async (_: any, formData: FormData) => {
   // 1. validate Field
   const validateFields = LoginSchema.safeParse({
-    name: formData.get("name"),
-    email: formData.get("email"),
-    password: formData.get("password"),
+    name: formData.get('name'),
+    email: formData.get('email'),
+    password: formData.get('password'),
   });
 
   if (!validateFields.success) {
     return {
-      errorMessage: "입력값이 올바르지 않습니다.",
+      errorMessage: '입력값이 올바르지 않습니다.',
     };
   }
 
@@ -29,7 +29,7 @@ export const login = async (_: any, formData: FormData) => {
 
     if (!existingUser) {
       return {
-        errorMessage: "존재하지 않는 사용자입니다.",
+        errorMessage: '존재하지 않는 사용자입니다.',
       };
     }
 
@@ -38,17 +38,17 @@ export const login = async (_: any, formData: FormData) => {
     const passwordMatch = await bcrypt.compare(password, userPassword);
     if (!passwordMatch) {
       return {
-        errorMessage: "비밀번호가 일치하지 않습니다.",
+        errorMessage: '비밀번호가 일치하지 않습니다.',
       };
     }
 
     await createSession({ id, name });
   } catch (error) {
-    console.log("error: ", error);
+    console.log('error: ', error);
     return {
-      errorMessage: "서버 오류입니다. 잠시 후 다시 시도해주세요.",
+      errorMessage: '서버 오류입니다. 잠시 후 다시 시도해주세요.',
     };
   }
 
-  redirect("/");
+  redirect('/');
 };

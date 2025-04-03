@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { login } from "@/actions/login";
-import { useFormValidate } from "@/hooks/useFormValidate";
-import { LoginSchema } from "@/schemas/auth";
-import { LoginFormError } from "@/types/form";
-import { useActionState, useEffect } from "react";
-import toast from "react-hot-toast";
-import FormCard from "./FormCard";
-import { Input } from "../ui/input";
-import FormMessage from "./FormMessage";
-import Submit from "./Submit";
+import { login } from '@/actions/login';
+import { useFormValidate } from '@/hooks/useFormValidate';
+import { LoginSchema } from '@/schemas/auth';
+import { LoginFormError } from '@/types/form';
+import { useActionState, useEffect } from 'react';
+import toast from 'react-hot-toast';
+import FormCard from './FormCard';
+import { Input } from '../ui/input';
+import FormMessage from './FormMessage';
+import Submit from './Submit';
 
 export default function LoginForm() {
   const [error, action, isPending] = useActionState(login, undefined);
@@ -29,7 +29,7 @@ export default function LoginForm() {
   return (
     <FormCard
       title="로그인"
-      footer={{ label: "아직 계정이 없으십니까?", href: "/signup" }}
+      footer={{ label: '아직 계정이 없으십니까?', href: '/signup' }}
     >
       <form action={action} className="space-y-6">
         {/* 이메일 */}
@@ -59,7 +59,7 @@ export default function LoginForm() {
           {errors?.password && <FormMessage message={errors?.password[0]} />}
         </div>
         <Submit className="w-full font-extrabold" disabled={isPending}>
-          {isPending ? "로그인 중..." : "로그인"}
+          {isPending ? '로그인 중...' : '로그인'}
         </Submit>
       </form>
     </FormCard>
