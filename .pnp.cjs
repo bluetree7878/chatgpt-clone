@@ -45,6 +45,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-config-next", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:15.2.4"],\
           ["eslint-plugin-react", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:7.37.4"],\
           ["eslint-plugin-react-hooks", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:5.2.0"],\
+          ["jose", "npm:6.0.10"],\
           ["lucide-react", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:0.486.0"],\
           ["next", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:15.2.4"],\
           ["react", "npm:19.1.0"],\
@@ -2024,6 +2025,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-config-next", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:15.2.4"],\
           ["eslint-plugin-react", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:7.37.4"],\
           ["eslint-plugin-react-hooks", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:5.2.0"],\
+          ["jose", "npm:6.0.10"],\
           ["lucide-react", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:0.486.0"],\
           ["next", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:15.2.4"],\
           ["react", "npm:19.1.0"],\
@@ -3854,6 +3856,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../AppData/Local/Yarn/Berry/cache/jiti-npm-2.4.2-d980cbb540-10c0.zip/node_modules/jiti/",\
         "packageDependencies": [\
           ["jiti", "npm:2.4.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["jose", [\
+      ["npm:6.0.10", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/jose-npm-6.0.10-d2dce0e52a-10c0.zip/node_modules/jose/",\
+        "packageDependencies": [\
+          ["jose", "npm:6.0.10"]\
         ],\
         "linkType": "HARD"\
       }]\
