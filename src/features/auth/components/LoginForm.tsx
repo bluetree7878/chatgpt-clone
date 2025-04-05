@@ -1,15 +1,15 @@
 'use client';
 
-import { login } from '@/actions/login';
-import { useFormValidate } from '@/hooks/useFormValidate';
-import { LoginSchema } from '@/schemas/auth';
-import { LoginFormError } from '@/types/form';
 import { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import FormCard from './FormCard';
-import { Input } from '../ui/input';
 import FormMessage from './FormMessage';
 import Submit from './Submit';
+import { login } from '@/features/auth/services/login';
+import { useFormValidate } from '@/features/auth/hooks/useFormValidate';
+import { LoginFormError } from '@/features/auth/types/form';
+import { LoginSchema } from '@/features/auth/schemas/auth';
+import { Input } from '@/components/ui/input';
 
 export default function LoginForm() {
   const [error, action, isPending] = useActionState(login, undefined);

@@ -1,11 +1,11 @@
 'use server';
 
-import { getUserByEmail } from '@/data/user';
 import db from '@/db';
 import { user } from '@/db/schema';
-import { SignUpSchema } from '@/schemas/auth';
+import { SignUpSchema } from '@features/auth/schemas/auth';
 import bcrypt from 'bcryptjs';
 import { redirect } from 'next/navigation';
+import { getUserByEmail } from '@/data/user';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const signUp = async (_: any, formData: FormData) => {

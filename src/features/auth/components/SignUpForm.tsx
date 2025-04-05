@@ -5,11 +5,11 @@ import { Input } from '@/components/ui/input';
 import FormCard from './FormCard';
 import FormMessage from './FormMessage';
 import Submit from './Submit';
-import { useFormValidate } from '@/hooks/useFormValidate';
-import { SignUpSchema } from '@/schemas/auth';
-import { SignUpFormError } from '@/types/form.d';
-import { signUp } from '@/actions/signup';
 import toast from 'react-hot-toast';
+import { signUp } from '@features/auth/services/signup';
+import { useFormValidate } from '@features/auth/hooks/useFormValidate';
+import { SignUpSchema } from '@features/auth/schemas/auth';
+import { SignUpFormError } from '@features/auth/types/form';
 
 export default function SignUpForm() {
   const [error, action, isPending] = useActionState(signUp, undefined);
@@ -70,7 +70,9 @@ export default function SignUpForm() {
           />
           {errors?.password && <FormMessage message={errors?.password[0]} />}
         </div>
-        <Submit className="w-full font-extrabold">가입하기</Submit>
+        <Submit className="w-full font-extrabold" disabled={isPending}>
+          회원가입
+        </Submit>
       </form>
     </FormCard>
   );

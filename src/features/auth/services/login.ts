@@ -1,10 +1,10 @@
 'use server';
 
-import { getUserByEmail } from '@/data/user';
-import { LoginSchema } from '@/schemas/auth';
 import bcrypt from 'bcryptjs';
 import { createSession } from './sessions';
 import { redirect } from 'next/navigation';
+import { LoginSchema } from '@/features/auth/schemas/auth';
+import { getUserByEmail } from '@/data/user';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const login = async (_: any, formData: FormData) => {

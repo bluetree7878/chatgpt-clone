@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { AUTH_ROUTES, BASE_URL, PUBLIC_ROUTES } from './constants/routes';
 import { cookies } from 'next/headers';
-import { verify } from './actions/sessions';
+import { AUTH_ROUTES, BASE_URL, PUBLIC_ROUTES } from '@/constants/routes';
+import { verify } from '@/features/auth/services/sessions';
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
