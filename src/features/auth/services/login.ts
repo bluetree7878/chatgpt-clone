@@ -1,7 +1,7 @@
 'use server';
 
 import bcrypt from 'bcryptjs';
-import { createSession } from './sessions';
+import { createToken } from './token';
 import { redirect } from 'next/navigation';
 import { LoginSchema } from '@/features/auth/schemas/auth';
 import { getUserByEmail } from '@/data/user';
@@ -42,7 +42,7 @@ export const login = async (_: any, formData: FormData) => {
       };
     }
 
-    await createSession({ id, name });
+    await createToken({ id, name });
   } catch (error) {
     console.log('error: ', error);
     return {
