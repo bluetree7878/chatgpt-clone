@@ -6,9 +6,10 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
 		"generate": "drizzle-kit generate",
-		"migrate": "drizzle-kit migrate"
+		"migrate": "drizzle-kit migrate",
+		"format": "biome format --write .",
+		"check": "biome check ."
 	},
 	"dependencies": {
 		"@neondatabase/serverless": "^1.0.0",
