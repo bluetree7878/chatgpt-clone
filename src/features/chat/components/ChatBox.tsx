@@ -1,11 +1,12 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Send } from 'lucide-react';
-import { useState } from 'react';
+import { useState, type KeyboardEvent } from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
 import ChatMessage from './ChatMessage';
 import type { Message } from '@/features/chat/types';
+import { cn } from '@/lib/utils';
 
 export default function ChatBox() {
 	const [input, setInput] = useState('');
@@ -57,6 +58,15 @@ export default function ChatBox() {
 		}
 	};
 
+	const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+		if (e.key === 'Enter' && !e.shiftKey) {
+			if (!isLoading && input.trim()) {
+				e.preventDefault();
+				handleSubmit(e);
+			}
+		}
+	};
+
 	return (
 		<div className='flex flex-col h-full'>
 			{/* 채팅 메시지 영역 */}
@@ -75,12 +85,20 @@ export default function ChatBox() {
 				className='border-t p-4 dark:border-neutral-800'
 			>
 				<div className='flex gap-2'>
-					<Input
+					<TextareaAutosize
 						value={input}
 						onChange={(e) => setInput(e.target.value)}
+						onKeyDown={handleKeyDown}
 						placeholder='메시지를 입력하세요...'
-						className='flex-1'
+						className={cn(
+							'flex-1 resize-none border rounded-md p-2',
+							'focus:outline-none focus:ring-2 focus:ring-neutral-400',
+							'dark:bg-neutral-800 dark:border-neutral-700 dark:text-white',
+							'min-h-[40px] max-h-[200px]',
+						)}
 						disabled={isLoading}
+						minRows={1}
+						maxRows={6}
 					/>
 					<Button type='submit' disabled={isLoading || !input.trim()}>
 						<Send className='h-4 w-4' />
