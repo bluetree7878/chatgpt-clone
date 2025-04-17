@@ -1,6 +1,9 @@
 import { cn } from '@/lib/utils';
 import type { Message } from '@/features/chat/types';
 import { formatTime } from '@/utils/formatTime';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 interface ChatMessageProps {
 	message: Message;
@@ -19,7 +22,14 @@ export default function ChatMessage({ message }: ChatMessageProps) {
 						: 'bg-neutral-100 text-black dark:bg-neutral-800 dark:text-white',
 				)}
 			>
-				<p>{message.content}</p>
+				<div className='prose prose-sm dark:prose-invert max-w-none'>
+					<ReactMarkdown
+						remarkPlugins={[remarkGfm]}
+						rehypePlugins={[rehypeRaw]}
+					>
+						{message.content}
+					</ReactMarkdown>
+				</div>
 				<div className='text-xs opacity-70 mt-1'>
 					{formatTime(message.createdAt)}
 				</div>
