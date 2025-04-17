@@ -43,6 +43,15 @@
 	--radius-xl: calc(var(--radius) + 4px);
 }
 
+:root,
+html,
+body {
+	transition-property: color, background-color, border-color,
+		text-decoration-color, fill, stroke;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 400ms;
+}
+
 :root {
 	--radius: 0.625rem;
 	--card: oklch(1 0 0);
@@ -115,6 +124,11 @@
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
+		transition-property: color, background-color, border-color,
+			text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+			filter, backdrop-filter;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 400ms;
 	}
 	body {
 		@apply bg-background text-foreground;

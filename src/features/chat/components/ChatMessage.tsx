@@ -15,8 +15,8 @@ export default function ChatMessage({ message }: ChatMessageProps) {
 				className={cn(
 					'max-w-[80%] rounded-lg px-4 py-2',
 					isUser
-						? 'bg-blue-600 text-white'
-						: 'bg-neutral-100 dark:bg-neutral-800 dark:text-white',
+						? 'bg-neutral-800 text-white dark:bg-neutral-100 dark:text-black'
+						: 'bg-neutral-100 text-black dark:bg-neutral-800 dark:text-white',
 				)}
 			>
 				<p>{message.content}</p>
