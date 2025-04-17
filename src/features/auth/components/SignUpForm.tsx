@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { useFormValidate } from '@features/auth/hooks/useFormValidate';
 import { SignUpSchema } from '@features/auth/schemas/auth';
 import { signUp } from '@features/auth/services/signup';
-import type { SignUpFormError } from '@features/auth/types/form';
+import type { SignUpFormError } from '@features/auth/type';
 import { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import FormCard from './FormCard';
