@@ -5,7 +5,7 @@ import { useFormValidate } from '@/features/auth/hooks/useFormValidate';
 import { LoginSchema } from '@/features/auth/schemas/auth';
 import { login } from '@/features/auth/services/login';
 import type { LoginFormError } from '@/features/auth/type';
-import { useActionState, useEffect } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import FormCard from './FormCard';
 import FormMessage from './FormMessage';
@@ -15,9 +15,15 @@ export default function LoginForm() {
 	const [error, action, isPending] = useActionState(login, undefined);
 	const { errors, validateField } =
 		useFormValidate<LoginFormError>(LoginSchema);
+	const [email, setEmail] = useState('');
+
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
 		validateField(name, value);
+
+		if (name === 'email') {
+			setEmail(value);
+		}
 	};
 
 	useEffect(() => {
@@ -41,6 +47,7 @@ export default function LoginForm() {
 						name='email'
 						placeholder='example@example.com'
 						onChange={handleChange}
+						value={email}
 						error={!!errors?.email}
 					/>
 					{errors?.email && <FormMessage message={errors?.email[0]} />}
