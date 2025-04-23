@@ -46,6 +46,7 @@ const RAW_RUNTIME_STATE =
           ["jose", "npm:6.0.10"],\
           ["lucide-react", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:0.486.0"],\
           ["next", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:15.2.4"],\
+          ["next-themes", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:0.4.6"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:19.1.0"],\
           ["react-hot-toast", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:2.5.2"],\
@@ -1345,6 +1346,7 @@ const RAW_RUNTIME_STATE =
           ["jose", "npm:6.0.10"],\
           ["lucide-react", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:0.486.0"],\
           ["next", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:15.2.4"],\
+          ["next-themes", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:0.4.6"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:19.1.0"],\
           ["react-hot-toast", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:2.5.2"],\
@@ -2956,6 +2958,32 @@ const RAW_RUNTIME_STATE =
           "react-dom",\
           "react",\
           "sass"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["next-themes", [\
+      ["npm:0.4.6", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/next-themes-npm-0.4.6-7c480d5b1d-10c0.zip/node_modules/next-themes/",\
+        "packageDependencies": [\
+          ["next-themes", "npm:0.4.6"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:0.4.6", {\
+        "packageLocation": "./.yarn/__virtual__/next-themes-virtual-0d92a69d3a/3/AppData/Local/Yarn/Berry/cache/next-themes-npm-0.4.6-7c480d5b1d-10c0.zip/node_modules/next-themes/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.1.0"],\
+          ["@types/react-dom", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:19.1.1"],\
+          ["next-themes", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:0.4.6"],\
+          ["react", "npm:19.1.0"],\
+          ["react-dom", "virtual:96e26f6bdd5f31f5dee40ea4c6e3cd708bed2c762ca924e4d4d13ff26af6a261aa1e26355c8b34ea4a0e83aa32ec3d529da0120451fc92f0d7bbb5ebcd527d1a#npm:19.1.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\

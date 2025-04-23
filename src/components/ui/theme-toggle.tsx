@@ -1,6 +1,6 @@
 'use client';
 
-import { useTheme } from '@/lib/theme';
+import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
 
 export function ThemeToggle() {
@@ -10,7 +10,7 @@ export function ThemeToggle() {
 		<button
 			type='button'
 			onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-			className='rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors'
+			className='rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer'
 			aria-label='테마 전환'
 		>
 			{theme === 'light' ? (
