@@ -22,7 +22,7 @@ export default function SignUpForm() {
 
 	useEffect(() => {
 		if (error) {
-			toast.error(error.errorMessage);
+			toast.error(error.errorMessage ?? '예기치 않은 오류가 발생했습니다.');
 		}
 	}, [error]);
 

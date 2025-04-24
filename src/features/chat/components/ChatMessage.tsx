@@ -24,12 +24,13 @@ export default function ChatMessage({ message }: ChatMessageProps) {
 			>
 				<div className='prose prose-sm dark:prose-invert max-w-none'>
 					<ReactMarkdown
-						remarkPlugins={[remarkGfm]}
-						rehypePlugins={[rehypeRaw]}
+						remarkPlugins={[remarkGfm]} // GitHub Flavored Markdown 지원
+						rehypePlugins={[rehypeRaw]} // HTML 태그 지원
 					>
 						{message.content}
 					</ReactMarkdown>
 				</div>
+
 				<div className='text-xs opacity-70 mt-1'>
 					{formatTime(message.createdAt)}
 				</div>
