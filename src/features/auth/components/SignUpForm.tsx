@@ -71,7 +71,7 @@ export default function SignUpForm() {
 					{errors?.password && <FormMessage message={errors?.password[0]} />}
 				</div>
 				<Submit className='w-full font-extrabold' disabled={isPending}>
-					회원가입
+					{isPending ? '처리중...' : '회원가입'}
 				</Submit>
 			</form>
 		</FormCard>
