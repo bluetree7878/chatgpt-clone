@@ -14,6 +14,13 @@ interface SideBarProps {
 export default function SideBar({ children }: SideBarProps) {
 	const [open, setOpen] = useState(false);
 
+	/**
+	 * @todo 대화 목록 기능 추가
+	 * - 사용자의 이전 대화 목록을 DB에서 불러와 표시
+	 * - 대화 선택 기능 구현
+	 * - 새 대화 시작 버튼 추가
+	 * - 대화 이름 자동 생성 및 수정 기능
+	 */
 	return (
 		<div
 			className={cn(

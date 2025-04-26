@@ -11,6 +11,12 @@ interface NavLink {
 }
 
 export const NavigationLinks = () => {
+	/**
+	 * @todo 로그아웃 기능 구현
+	 * - 로그아웃 API 연동
+	 * - 토큰 삭제 및 리다이렉션 처리
+	 * - 확인 다이얼로그 추가
+	 */
 	const links: NavLink[] = [
 		{
 			label: 'Dashboard',
